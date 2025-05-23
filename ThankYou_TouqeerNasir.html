@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You Sir Touqeer</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000000 100%);
+      height: 100vh;
+      overflow: hidden;
+      color: #0ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: backgroundPulse 10s infinite alternate;
+    }
+
+    @keyframes backgroundPulse {
+      0% {
+        background-color: #0d1b2a;
+      }
+      100% {
+        background-color: #001f3f;
+      }
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      animation: moveStars 10s linear infinite;
+    }
+
+    @keyframes moveStars {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(1000px) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      z-index: 2;
+      padding: 2rem;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #0ff;
+      }
+      to {
+        text-shadow: 0 0 20px #0ff, 0 0 30px #0ff;
+      }
+    }
+
+    p {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      color: #fff;
+      text-shadow: 0 0 5px #0ff;
+    }
+
+    .neon-btn {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      border: 2px solid #0ff;
+      background: transparent;
+      color: #0ff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 10px;
+      text-shadow: 0 0 5px #0ff;
+      box-shadow: 0 0 20px #0ff;
+      transition: all 0.3s ease-in-out;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 10px #0ff;
+      }
+      50% {
+        box-shadow: 0 0 30px #0ff;
+      }
+      100% {
+        box-shadow: 0 0 10px #0ff;
+      }
+    }
+
+    .neon-btn:hover {
+      background-color: #0ff;
+      color: #000;
+      box-shadow: 0 0 40px #0ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+  <div class="container">
+    <h1>Thank You Sir Touqeer Akhter Nasir</h1>
+    <p>Your wisdom, patience, and dedication have inspired me in ways words can't express. You're not just a teacher — you're a guiding star in the galaxy of knowledge.</p>
+    <button class="neon-btn" onclick="showMore()">See My Gratitude</button>
+    <p id="gratitude" style="display:none; margin-top: 2rem;">Sir, every moment in your class sparked curiosity in my soul. Thank you for being a beacon of light in my journey — may your brilliance keep lighting the paths of many more students.</p>
+  </div>
+
+  <script>
+    function showMore() {
+      document.getElementById('gratitude').style.display = 'block';
+    }
+
+    const starsContainer = document.getElementById("stars");
+    for (let i = 0; i < 200; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
+      star.style.left = Math.random() * window.innerWidth + "px";
+      star.style.top = Math.random() * window.innerHeight + "px";
+      star.style.animationDuration = 5 + Math.random() * 5 + "s";
+      starsContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>
